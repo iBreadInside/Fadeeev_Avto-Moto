@@ -1,0 +1,16 @@
+@import '../../sass/variables.scss';
+@import '../../sass/mixins.scss';
+
+.footer {
+  @include nav;
+  min-height: 82px;
+  position:fixed;
+  left:0px;
+  bottom:0px;
+  height:30px;
+  width:100%;
+}
+
+.wrapper {
+  @include wrapper;
+}

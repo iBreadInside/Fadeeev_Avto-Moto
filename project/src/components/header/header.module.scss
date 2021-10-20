@@ -1,0 +1,23 @@
+@import '../../sass/variables.scss';
+@import '../../sass/mixins.scss';
+
+.header {
+  @include nav;
+  min-height: 84px;
+}
+
+.wrapper {
+  @include wrapper;
+  display: flex;
+  flex-direction: row;
+  padding: 0 6px;
+}
+
+.logo {
+  display: block;
+  margin-right: auto;
+
+  &:hover {
+    opacity: .5;
+  }
+}

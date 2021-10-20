@@ -1,0 +1,33 @@
+@mixin wrapper {
+  width: $wrapper-width;
+  margin: 0 auto;
+}
+
+@mixin list-style-none {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+@mixin nav {
+  background-color: $ligthgray--background;
+  color: $black--default;
+  display: flex;
+  align-items: center;
+}
+
+@mixin button {
+  font-family: $font-default;
+  border-radius: 4px;
+  cursor: pointer;
+  text-align: center;
+
+  &:hover {
+    opacity: .6;
+  }
+
+  &:disabled {
+    opacity: .6;
+    cursor: default;
+  }
+}
