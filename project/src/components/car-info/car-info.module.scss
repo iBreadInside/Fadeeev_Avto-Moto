@@ -1,0 +1,63 @@
+@import '../../sass/mixins.scss';
+
+.name {
+  margin-bottom: 60px;
+}
+
+.content {
+  @include visually-hidden;
+}
+
+.details {
+  @include list-style-none;
+  display: flex;
+  gap: 7px;
+}
+
+.details__item {
+  position: relative;
+  display: block;
+  text-align: end;
+  height: 100%;
+
+  &::before {
+    content: '';
+    position: absolute;
+    width: 53px;
+    height: 40px;
+    top: -40px;
+    left: 25%;
+    background-image: url('../../img/svg/petrol.svg');
+  }
+}
+
+.gearbox,
+.power,
+.volume {
+  &::before {
+    width: 40px;
+  }
+}
+
+.gearbox::before {
+  background-image: url('../../img/svg/mechanical.svg');
+}
+
+.power::before {
+  background-image: url('../../img/svg/horse-pwr.svg');
+}
+
+.volume::before {
+  background-image: url('../../img/svg/volume.svg');
+}
+
+.prices {
+  @include list-style-none;
+  display: flex;
+  gap: 30px;
+}
+
+.buttons {
+  display: flex;
+  flex-direction: column;
+}
