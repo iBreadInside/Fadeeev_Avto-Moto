@@ -1,0 +1,40 @@
+@import '../../sass/mixins.scss';
+
+.slider {
+  width: fit-content;
+  padding-top: 15px;
+}
+
+.bigSlide {
+  position: relative;
+  margin-bottom: 39px;
+}
+
+.new {
+  position: absolute;
+  display: block;
+  text-transform: uppercase;
+  text-align: center;
+  color: white;
+  background-color: $red--default;
+  font-size: 10px;
+  line-height: 14px;
+  font-weight: 600;
+  width: 122px;
+  height: 30px;
+  top: 0;
+  left: 0;
+  padding: 7px;
+}
+
+.control {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.previews {
+  @include list-style-none;
+  display: flex;
+  gap: 25px;
+}

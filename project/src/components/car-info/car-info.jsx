@@ -1,4 +1,5 @@
 import React from 'react';
+import Slider from '../slider/slider';
 import styles from './car-info.module.scss';
 
 const Car = {
@@ -19,12 +20,10 @@ const Car = {
 
 export default function CarInfo() {
   return(
-    <section className='car'>
+    <section className={styles.car}>
       <h1 className={styles.content}>Информация об автомобиле</h1>
 
-      <div className='slider'>
-
-      </div>
+      <Slider />
 
       <div className='info'>
         <h2 className={styles.name}>{Car.name}</h2>
@@ -37,13 +36,13 @@ export default function CarInfo() {
         </ul>
 
         <ul className={styles.prices}>
-          <li className='prices__current'>{Car.currentPrice} &#8381;</li>
-          <li className='prices__full'>{Car.fullPrice} &#8381;</li>
+          <li className={styles.prices__current}>{Car.currentPrice} &#8381;</li>
+          <li className={styles.prices__full}>{Car.fullPrice} &#8381;</li>
         </ul>
 
         <div className={styles.buttons}>
-          <button className='request'>оставить заявку</button>
-          <button className='credit'>в кредит от {Car.credit} &#8381;</button>
+          <button className={styles.request}>оставить заявку</button>
+          <button className={styles.credit}>в кредит от {Car.credit} &#8381;</button>
         </div>
       </div>
     </section>
