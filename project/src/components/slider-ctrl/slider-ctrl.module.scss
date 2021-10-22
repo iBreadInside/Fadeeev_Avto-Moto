@@ -1,0 +1,34 @@
+@import '../../sass/variables.scss';
+
+.arrow {
+  position: relative;
+  box-sizing: border-box;
+  width: 52px;
+  height: 52px;
+  border: 1px solid $gray--default;
+  border-radius: 50%;
+  background-color: transparent;
+
+  &::before {
+    content: '';
+    position: absolute;
+    width: 20px;
+    height: 14px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-image: url('../../img/svg/arrow.svg');
+  }
+
+  &:disabled::before {
+    opacity: .3;
+  }
+
+  &:not(:disabled):hover {
+    border-color: $black--default;
+  }
+}
+
+.left {
+  transform: rotate(180deg);
+}

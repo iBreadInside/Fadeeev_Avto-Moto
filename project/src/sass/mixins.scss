@@ -1,3 +1,5 @@
+@import './variables.scss';
+
 @mixin wrapper {
   width: $wrapper-width;
   margin: 0 auto;
@@ -28,17 +30,22 @@
 }
 
 @mixin button {
-  font-family: $font-default;
-  border-radius: 4px;
+  display: block;
+  box-sizing: border-box;
   cursor: pointer;
   text-align: center;
+  color: white;
+  background-color: $red--default;
+  width: fit-content;
+  padding: 17px 20px;
+  font-size: 16px;
+  line-height: 19px;
+  font-weight: 600;
+  text-transform: uppercase;
+  border: none;
 
   &:hover {
-    opacity: .6;
-  }
-
-  &:disabled {
-    opacity: .6;
-    cursor: default;
+    color: white;
+    background-color: $red--hover;
   }
 }
