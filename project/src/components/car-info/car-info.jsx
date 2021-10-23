@@ -1,5 +1,6 @@
 import React from 'react';
 import Slider from '../slider/slider';
+import Tabs from '../tabs/tabs';
 import styles from './car-info.module.scss';
 
 const Car = {
@@ -45,6 +46,8 @@ export default function CarInfo() {
           <button className={styles.credit}>в кредит от {Car.credit} &#8381;</button>
         </div>
       </div>
+
+      <Tabs car={Car} />
     </section>
   );
 }
