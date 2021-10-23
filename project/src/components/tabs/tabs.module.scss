@@ -1,15 +1,19 @@
 @import '../../sass/mixins.scss';
 @import '../../sass/variables.scss';
 
+.tabs {
+  width: 585px;
+}
+
 .tabs__nav {
   margin-bottom: 7px;
+  margin-left: 3px;
 }
 
 .tab__list {
   @include list-style-none;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
-  width: 585px;
 }
 
 .tab__btn {

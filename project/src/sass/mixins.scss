@@ -1,7 +1,7 @@
 @import './variables.scss';
 
 @mixin wrapper {
-  width: $wrapper-width;
+  max-width: $wrapper-width;
   margin: 0 auto;
 }
 

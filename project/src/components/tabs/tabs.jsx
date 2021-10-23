@@ -51,7 +51,7 @@ export default function Tabs({car}) {
   useEffect(setDefaultTab, []);
 
   return(
-    <section className='tabs'>
+    <section className={styles.tabs}>
       <nav className={styles.tabs__nav}>
         <ul className={styles.tab__list}>
           {tabList}

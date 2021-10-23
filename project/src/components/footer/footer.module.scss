@@ -4,10 +4,10 @@
 .footer {
   @include nav;
   min-height: 82px;
-  position:fixed;
-  left:0px;
+  position:sticky;
+  // left:0px;
   bottom:0px;
-  width:100%;
+  // width:100%;
 }
 
 .wrapper {

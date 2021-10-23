@@ -3,8 +3,12 @@
 .list {
   @include list-style-none;
   display: flex;
+  flex-wrap: wrap;
   align-items: center;
-  gap: 61px;
+}
+
+.item:not(:last-child) {
+  margin-right: 60px;
 }
 
 .link {
