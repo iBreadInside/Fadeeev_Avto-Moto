@@ -9,7 +9,7 @@
   @include list-style-none;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
-  min-width: 585px;
+  width: 585px;
 }
 
 .tab__btn {

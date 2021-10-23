@@ -1,0 +1,60 @@
+@import '../../sass/mixins.scss';
+@import '../../sass/variables.scss';
+
+// Contacts
+.contacts {
+  display: flex;
+  gap: 112px;
+  margin-top: 23px;
+}
+
+.list {
+  @include list-style-none;
+  color: $black--contacts;
+}
+
+.item {
+  margin-bottom: 26px;
+}
+
+.type,
+.info {
+  display: block;
+  box-sizing: border-box;
+  margin: 0;
+}
+
+.type {
+  font-weight: bold;
+  margin-bottom: 8px;
+}
+
+.info {
+  font-size: 14px;
+  font-style: normal;
+  line-height: 19px;
+  font-weight: 600;
+}
+
+// Map
+.map {
+  position: relative;
+  overflow: hidden;
+}
+
+.city,
+.location {
+  color: white;
+  font-size: 12px;
+  position: absolute;
+  top: 0px;
+}
+
+.location {
+  top: 14px;
+}
+
+iframe {
+  position: relative;
+  border: none;
+}
