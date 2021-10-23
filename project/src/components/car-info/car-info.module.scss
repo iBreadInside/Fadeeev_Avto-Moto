@@ -5,6 +5,7 @@
   @include wrapper;
   display: flex;
   gap: 54px;
+  flex-wrap: wrap;
   margin: 75px auto;
 }
 

@@ -1,0 +1,36 @@
+@import '../../sass/mixins.scss';
+@import '../../sass/variables.scss';
+
+.tabs__nav {
+  margin-bottom: 7px;
+}
+
+.tab__list {
+  @include list-style-none;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  min-width: 585px;
+}
+
+.tab__btn {
+  box-sizing: border-box;
+  text-align: center;
+  color: $black--default;
+  background-color: transparent;
+  font-size: 20px;
+  line-height: 27px;
+  border: 1px solid $gray--default;
+  width: 100%;
+  padding: 11px 0 14px;
+
+  &:hover {
+    color: white;
+    background-color: $red--hover;
+  }
+}
+
+.tab__active {
+  color: white;
+  background-color: $red--default;
+  border-color: $red--default;
+}

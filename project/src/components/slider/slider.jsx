@@ -16,14 +16,17 @@ import SliderCtrl from '../slider-ctrl/slider-ctrl';
 
 const Slides = [
   {
+    id: 0,
     standart: firstSlide,
     retina: firstSlideRetina,
   },
   {
+    id: 1,
     standart: secondSlide,
     retina: secondSlideRetina,
   },
   {
+    id: 2,
     standart: thirdSlide,
     retina: thirdSlideRetina,
   }
@@ -31,14 +34,17 @@ const Slides = [
 
 const Previews = [
   {
+    id: 0,
     standart: firstSlidePreview,
     retina: firstSlidePreviewRetina,
   },
   {
+    id: 1,
     standart: secondSlidePreview,
     retina: secondSlidePreviewRetina,
   },
   {
+    id: 2,
     standart: thirdSlidePreview,
     retina: thirdSlidePreviewRetina,
   }
@@ -47,15 +53,15 @@ const Previews = [
 const renderPreviews = () => {
   return(
     Previews.map(
-      ({standart, retina}, index) => (
+      ({id, standart, retina}) => (
         <li
-          key={index}
+          key={id}
           className='preview'
         >
           <img
             src={standart}
             srcSet={retina}
-            alt={`Превью ${index}`}
+            alt={`Превью ${id + 1}`}
             width='128'
             height='80'
           />
@@ -83,14 +89,13 @@ export default function Slider() {
     <section className={styles.slider}>
       <div className={styles.bigSlide}>
         {Slides.map(
-          ({standart, retina}, index) => {
+          ({id, standart, retina}) => {
             return(
-              <>
-                <span class={styles.new}>new model</span>
+              <div key={id}>
+                <span className={styles.new}>new model</span>
                 {
-                  index === currentSlide && (
+                  id === currentSlide && (
                     <img
-                      key={index}
                       src={standart}
                       srcSet={`${retina} 2x`}
                       alt='Фото автомобиля Марпех 11'
@@ -99,7 +104,7 @@ export default function Slider() {
                     />
                   )
                 }
-              </>
+              </div>
             );
           }
         )}
