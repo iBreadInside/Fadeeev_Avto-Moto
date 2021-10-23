@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import Details from '../details/details';
 import styles from './tabs.module.scss';
 import detailsProp from '../details/details.prop';
+import Contacts from '../contacts/contacts';
 
 const TabType = {
   DETAILS: 'Характеристики',
@@ -15,7 +16,7 @@ const getTabByType = (type, car) => {
     case TabType.REVIEWS:
       return 2;
     case TabType.CONTACTS:
-      return 2;
+      return <Contacts />;
     default:
       return <Details detailsList={car.details} />;
   }
