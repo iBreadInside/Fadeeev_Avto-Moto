@@ -12,10 +12,10 @@
 }
 
 @mixin nav {
-  background-color: $ligthgray--background;
-  color: $black--default;
   display: flex;
   align-items: center;
+  background-color: $ligthgray--background;
+  color: $black--default;
 }
 
 @mixin visually-hidden {
@@ -31,7 +31,6 @@
 
 @mixin button {
   display: block;
-  box-sizing: border-box;
   cursor: pointer;
   text-align: center;
   color: white;

@@ -28,12 +28,12 @@ export default function Tabs({car}) {
   const tabList = Object.values(TabType).map(
     (value) => (
       <li
-        className='tab__item'
+        className={styles.item}
         key={value}
       >
         <button
           type='button'
-          className={`${styles.tab__btn} ${value === activeTab ? styles.tab__active : ''}`}
+          className={`${styles.btn} ${value === activeTab ? styles.active : ''}`}
           onClick={() => {
             setActiveTab(value);
           }}
@@ -52,8 +52,8 @@ export default function Tabs({car}) {
 
   return(
     <section className={styles.tabs}>
-      <nav className={styles.tabs__nav}>
-        <ul className={styles.tab__list}>
+      <nav className={styles.nav}>
+        <ul className={styles.list}>
           {tabList}
         </ul>
       </nav>
