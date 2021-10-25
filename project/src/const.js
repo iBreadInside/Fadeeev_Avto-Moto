@@ -59,3 +59,5 @@ export const NavLinks = [
     route: AppRoute.TEST_DRIVE,
   },
 ];
+
+export const STARS_COUNT = 5;

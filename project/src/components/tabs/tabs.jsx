@@ -4,6 +4,7 @@ import Details from '../details/details';
 import styles from './tabs.module.scss';
 import detailsProp from '../details/details.prop';
 import Contacts from '../contacts/contacts';
+import Reviews from '../reviews/reviews';
 
 const TabType = {
   DETAILS: 'Характеристики',
@@ -14,7 +15,7 @@ const TabType = {
 const getTabByType = (type, car) => {
   switch (type) {
     case TabType.REVIEWS:
-      return 2;
+      return <Reviews />;
     case TabType.CONTACTS:
       return <Contacts />;
     default:

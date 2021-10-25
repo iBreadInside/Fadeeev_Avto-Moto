@@ -48,3 +48,10 @@
     background-color: $red--hover;
   }
 }
+
+@mixin btn-red {
+  @include button;
+  color: $red--default;
+  background-color: transparent;
+  border: 1px solid $red--default;
+}

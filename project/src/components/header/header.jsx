@@ -14,8 +14,6 @@ export default function Header() {
           to={AppRoute.MAIN}>
           <img
             src={logo}
-            // width='134'
-            // height='55'
             alt='Логотип Avto-Moto' />
         </Link>
         <Nav />

@@ -115,8 +115,6 @@
 }
 
 .credit {
-  color: $red--default;
-  background-color: transparent;
-  border: 1px solid $red--default;
+  @include btn-red;
 }
 
