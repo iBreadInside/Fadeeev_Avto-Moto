@@ -18,7 +18,7 @@ export default function ReviewItem({item}) {
     return(
       <li
         key={id}
-        className={`${id} ${styles.star} ${id <= rating ? `${styles.red}` : ''}`}
+        className={`${id} ${styles.star} ${id.toString() <=  rating ? `${styles.red}` : ''}`}
       ></li>
     );
   });

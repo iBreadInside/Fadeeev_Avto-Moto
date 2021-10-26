@@ -109,8 +109,8 @@
     height: 22px;
     color: $gray--default
   }
+}
 
-  &.red::before {
-    color: $red--default;
-  }
+.red::before {
+  color: $red--default;
 }

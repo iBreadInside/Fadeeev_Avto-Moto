@@ -1,4 +1,5 @@
 import React, { Fragment, useEffect, useRef, useState } from 'react';
+import PropTypes from 'prop-types';
 import { LocalStorageKey, STARS_COUNT } from '../../const';
 import styles from './modal.module.scss';
 
@@ -20,6 +21,14 @@ export default function Modal({onClose, onFormSubmit}) {
   } = fields;
 
   const modalRef = useRef();
+
+  useEffect(() => {
+    document.body.classList.add(styles.hideOverflow);
+
+    return () => {
+      document.body.classList.remove(styles.hideOverflow);
+    };
+  })
 
   useEffect(() => {
     setFields(
@@ -187,4 +196,9 @@ export default function Modal({onClose, onFormSubmit}) {
       </div>
     </section>
   );
+}
+
+Modal.propTypes = {
+  onClose: PropTypes.func.isRequired,
+  onFormSubmit: PropTypes.func.isRequired,
 }

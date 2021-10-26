@@ -15,6 +15,10 @@
   z-index: 2;
 }
 
+.hideOverflow {
+  overflow: hidden;
+}
+
 .container {
   position: relative;
   display: flex;

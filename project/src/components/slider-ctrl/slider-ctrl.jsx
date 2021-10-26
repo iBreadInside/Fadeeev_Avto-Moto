@@ -8,6 +8,7 @@ export default function SliderCtrl({isLeft = false, onBtnClick, slideIndex, slid
       type='button'
       className={`${styles.arrow} ${isLeft && styles.left}`}
       onClick={onBtnClick}
+      aria-label={isLeft ? 'Слайд слева' : 'Слайд справа'}
       disabled={isLeft
         ? slideIndex === 0 && true
         : slideIndex === slidesLength - 1 && true}
@@ -17,6 +18,7 @@ export default function SliderCtrl({isLeft = false, onBtnClick, slideIndex, slid
 
 SliderCtrl.propTypes = {
   isLeft: PropTypes.bool,
+  onBtnClick: PropTypes.func.isRequired,
   slideIndex: PropTypes.number.isRequired,
   slidesLength: PropTypes.number.isRequired,
 };

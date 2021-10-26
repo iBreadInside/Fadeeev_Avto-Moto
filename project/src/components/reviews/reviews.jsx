@@ -37,7 +37,6 @@ export default function Reviews() {
     evt.preventDefault();
     setReviewsList(prevState => ([newComment, ...prevState]));
     setIsModalShown(false);
-    console.log(newComment);
 
     Object.values(LocalStorageKey).map((key) => (
       localStorage.removeItem(key)
