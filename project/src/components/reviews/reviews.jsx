@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { LocalStorageKey } from '../../const';
 import Modal from '../modal/modal';
 import ReviewItem from '../review-item/review-item';
 import styles from './reviews.module.scss';
@@ -28,6 +29,21 @@ export default function Reviews() {
     setIsModalShown(true);
   };
 
+  const handleClose = () => {
+    setIsModalShown(false);
+  };
+
+  const handleSubmit = (evt, newComment) => {
+    evt.preventDefault();
+    setReviewsList(prevState => ([newComment, ...prevState]));
+    setIsModalShown(false);
+    console.log(newComment);
+
+    Object.values(LocalStorageKey).map((key) => (
+      localStorage.removeItem(key)
+    ));
+  };
+
   return(
     <>
       <section className={styles.reviews}>
@@ -46,7 +62,7 @@ export default function Reviews() {
         </ul>
       </section>
 
-      {isModalShown && <Modal />}
+      {isModalShown && <Modal onClose={handleClose} onFormSubmit={handleSubmit} />}
     </>
   );
 }

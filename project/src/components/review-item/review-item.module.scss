@@ -30,7 +30,28 @@
 }
 
 .title {
+  position: relative;
   margin-bottom: 5px;
+}
+
+.plus,
+.minus {
+  &::before {
+    position: absolute;
+    content: '+';
+    left: -20px;
+    top: 50%;
+    transform: translate(0, -50%);
+    font-weight: 600;
+    font-size: 15px;
+    line-height: 20px;
+    color: $red--default;
+  }
+}
+
+.minus::before {
+  content: '\2013';
+  color: red;
 }
 
 .text,

@@ -61,3 +61,11 @@ export const NavLinks = [
 ];
 
 export const STARS_COUNT = 5;
+
+export const LocalStorageKey = {
+  NAME: 'name',
+  PLUS: 'plus',
+  MINUS: 'minus',
+  RATING: 'rating',
+  COMMENT: 'comment',
+}
