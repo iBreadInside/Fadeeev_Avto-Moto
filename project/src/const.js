@@ -59,3 +59,13 @@ export const NavLinks = [
     route: AppRoute.TEST_DRIVE,
   },
 ];
+
+export const STARS_COUNT = 5;
+
+export const LocalStorageKey = {
+  NAME: 'name',
+  PLUS: 'plus',
+  MINUS: 'minus',
+  RATING: 'rating',
+  COMMENT: 'comment',
+}

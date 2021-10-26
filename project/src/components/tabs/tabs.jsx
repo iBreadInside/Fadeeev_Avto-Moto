@@ -4,6 +4,7 @@ import Details from '../details/details';
 import styles from './tabs.module.scss';
 import detailsProp from '../details/details.prop';
 import Contacts from '../contacts/contacts';
+import Reviews from '../reviews/reviews';
 
 const TabType = {
   DETAILS: 'Характеристики',
@@ -14,7 +15,7 @@ const TabType = {
 const getTabByType = (type, car) => {
   switch (type) {
     case TabType.REVIEWS:
-      return 2;
+      return <Reviews />;
     case TabType.CONTACTS:
       return <Contacts />;
     default:
@@ -28,12 +29,12 @@ export default function Tabs({car}) {
   const tabList = Object.values(TabType).map(
     (value) => (
       <li
-        className='tab__item'
+        className={styles.item}
         key={value}
       >
         <button
           type='button'
-          className={`${styles.tab__btn} ${value === activeTab ? styles.tab__active : ''}`}
+          className={`${styles.btn} ${value === activeTab ? styles.active : ''}`}
           onClick={() => {
             setActiveTab(value);
           }}
@@ -51,9 +52,9 @@ export default function Tabs({car}) {
   useEffect(setDefaultTab, []);
 
   return(
-    <section className='tabs'>
-      <nav className={styles.tabs__nav}>
-        <ul className={styles.tab__list}>
+    <section className={styles.tabs}>
+      <nav className={styles.nav}>
+        <ul className={styles.list}>
           {tabList}
         </ul>
       </nav>

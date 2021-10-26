@@ -10,12 +10,14 @@
   @include wrapper;
   display: flex;
   flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
   padding: 0 6px;
+  width: 100%;
 }
 
 .logo {
   display: block;
-  margin-right: auto;
 
   &:hover {
     opacity: .5;

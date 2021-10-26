@@ -18,7 +18,7 @@ export default function Nav({isFooter = false}) {
           ({text, route}) => (
             <li
               key={text}
-              className='list__item'
+              className={styles.item}
             >
               <NavLink
                 exact

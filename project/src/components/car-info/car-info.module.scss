@@ -6,7 +6,8 @@
   display: flex;
   gap: 54px;
   flex-wrap: wrap;
-  margin: 75px auto;
+  margin: 3vw auto 5.5vw;
+  width: 100%;
 }
 
 .content {
@@ -75,8 +76,9 @@
   @include list-style-none;
   display: flex;
   align-items: center;
+  flex-wrap: wrap;
   gap: 34px;
-  margin: 37px 0;
+  margin: 1.4vw 0;
 }
 
 .prices__current {
@@ -113,8 +115,6 @@
 }
 
 .credit {
-  color: $red--default;
-  background-color: transparent;
-  border: 1px solid $red--default;
+  @include btn-red;
 }
 

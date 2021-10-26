@@ -3,25 +3,20 @@
 
 .details {
   @include list-style-none;
+  max-width: 565px;
 }
 
 .item {
   display: flex;
-  box-sizing: border-box;
   justify-content: space-between;
   border-bottom: 1px solid $gray--default;
 }
 
 .text {
   display: block;
-  box-sizing: border-box;
   margin: 19px 0 8px;
 }
 
 .name {
   color: $black--default;
-}
-
-.value {
-  margin-right: 18px;
 }

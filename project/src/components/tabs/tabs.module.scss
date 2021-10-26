@@ -1,19 +1,30 @@
 @import '../../sass/mixins.scss';
 @import '../../sass/variables.scss';
 
-.tabs__nav {
+.tabs {
+  padding: 0 3px;
+  width: 100%;
+}
+
+.nav {
+  display: flex;
+  flex-wrap: wrap;
   margin-bottom: 7px;
 }
 
-.tab__list {
+.list {
   @include list-style-none;
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  width: 585px;
+  display: flex;
+  flex-wrap: wrap;
 }
 
-.tab__btn {
-  box-sizing: border-box;
+.item {
+  display: block;
+  width: 195px;
+  flex-grow: 1;
+}
+
+.btn {
   text-align: center;
   color: $black--default;
   background-color: transparent;
@@ -22,6 +33,7 @@
   border: 1px solid $gray--default;
   width: 100%;
   padding: 11px 0 14px;
+  cursor: pointer;
 
   &:hover {
     color: white;
@@ -29,7 +41,7 @@
   }
 }
 
-.tab__active {
+.active {
   color: white;
   background-color: $red--default;
   border-color: $red--default;

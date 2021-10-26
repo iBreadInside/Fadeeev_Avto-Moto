@@ -26,7 +26,7 @@ export default function CarInfo() {
 
       <Slider />
 
-      <div className='info'>
+      <div className={styles.info}>
         <h2 className={styles.name}>{Car.name}</h2>
 
         <ul className={styles.details}>

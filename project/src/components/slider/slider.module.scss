@@ -8,7 +8,9 @@
 
 .bigSlide {
   position: relative;
-  margin-bottom: 39px;
+  margin-bottom: 1.5vw;
+  max-width: 600px;
+  max-height: 375px;
 }
 
 .new {
@@ -37,5 +39,12 @@
 .previews {
   @include list-style-none;
   display: flex;
-  gap: 25px;
+  justify-content: space-between;
+  flex-grow: 1;
+  max-width: 434px;
+}
+
+.preview {
+  max-width: 128px;
+  max-height: 80px;
 }

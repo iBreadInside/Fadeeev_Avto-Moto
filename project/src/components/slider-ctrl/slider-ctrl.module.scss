@@ -2,12 +2,12 @@
 
 .arrow {
   position: relative;
-  box-sizing: border-box;
   width: 52px;
   height: 52px;
   border: 1px solid $gray--default;
   border-radius: 50%;
   background-color: transparent;
+  padding: 0;
 
   &::before {
     content: '';
@@ -26,6 +26,7 @@
 
   &:not(:disabled):hover {
     border-color: $black--default;
+    cursor: pointer;
   }
 }
 

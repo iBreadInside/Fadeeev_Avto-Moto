@@ -56,14 +56,12 @@ const renderPreviews = () => {
       ({id, standart, retina}) => (
         <li
           key={id}
-          className='preview'
+          className={styles.preview}
         >
           <img
             src={standart}
             srcSet={retina}
             alt={`Превью ${id + 1}`}
-            width='128'
-            height='80'
           />
         </li>
       )
@@ -87,28 +85,26 @@ export default function Slider() {
 
   return(
     <section className={styles.slider}>
-      <div className={styles.bigSlide}>
-        {Slides.map(
-          ({id, standart, retina}) => {
-            return(
-              <div key={id}>
+      {Slides.map(
+        ({id, standart, retina}) => {
+          return(
+            id === currentSlide && (
+              <div
+                key={id}
+                className={styles.bigSlide}
+              >
                 <span className={styles.new}>new model</span>
-                {
-                  id === currentSlide && (
-                    <img
-                      src={standart}
-                      srcSet={`${retina} 2x`}
-                      alt='Фото автомобиля Марпех 11'
-                      width='600'
-                      height='375'
-                    />
-                  )
-                }
+
+                <img
+                  src={standart}
+                  srcSet={`${retina} 2x`}
+                  alt='Фото автомобиля Марпех 11'
+                />
               </div>
-            );
-          }
-        )}
-      </div>
+            )
+          );
+        }
+      )}
 
       <div className={styles.control}>
         <SliderCtrl

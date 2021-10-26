@@ -52,8 +52,6 @@ export default function Contacts() {
         <iframe
           title='map'
           src='https://yandex.ru/map-widget/v1/-/CCUqjJwiSC'
-          width='431'
-          height='271'
           frameBorder='1'
           allowFullScreen={true}
         />

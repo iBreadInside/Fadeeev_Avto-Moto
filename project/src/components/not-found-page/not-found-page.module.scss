@@ -1,0 +1,15 @@
+@import '../../sass/mixins.scss';
+
+.page {
+  @include page;
+}
+
+.notFound {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.message {
+  font-size: 64px;
+}

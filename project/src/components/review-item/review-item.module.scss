@@ -1,0 +1,116 @@
+@import '../../sass/variables.scss';
+
+.review {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  border-bottom: 1px solid $gray--default;
+  padding-bottom: 10px;
+}
+
+.name {
+  font-size: 20px;
+  line-height: 27px;
+  font-weight: 600;
+  color: $black--default;
+  margin: 0;
+}
+
+.short {
+  margin-left: 19px;
+}
+
+.title,
+.text,
+.commend {
+  font-size: 16px;
+  line-height: 20px;
+  font-weight: 600;
+  margin: 0;
+}
+
+.title {
+  position: relative;
+  margin-bottom: 5px;
+}
+
+.plus,
+.minus {
+  &::before {
+    position: absolute;
+    content: '+';
+    left: -20px;
+    top: 50%;
+    transform: translate(0, -50%);
+    font-weight: 600;
+    font-size: 15px;
+    line-height: 20px;
+    color: $red--default;
+  }
+}
+
+.minus::before {
+  content: '\2013';
+  color: red;
+}
+
+.text,
+.commend {
+  font-weight: normal;
+}
+
+.commend,
+.respond {
+  color: $red--default;
+}
+
+.full {
+  margin-bottom: 9px;
+}
+
+.rating {
+  display: flex;
+}
+
+.bottom {
+  display: flex;
+}
+
+.time {
+  font-size: 14px;
+  line-height: 19px;
+  opacity: .4;
+  margin-right: 24px;
+}
+
+.respond {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+
+  &:hover {
+    color: $red--hover;
+  }
+}
+
+.stars {
+  display: flex;
+  padding: 0;
+  margin-right: 8px;
+}
+
+.star {
+  display: block;
+
+  &::before {
+    content: '★';
+    display: block;
+    width: 22px;
+    height: 22px;
+    color: $gray--default
+  }
+
+  &.red::before {
+    color: $red--default;
+  }
+}
