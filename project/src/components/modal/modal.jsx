@@ -53,7 +53,7 @@ export default function Modal({onClose, onFormSubmit}) {
     document.addEventListener('keydown', closeOnEsc);
 
     return () => {
-      document.removeEventListener('click',closeOnEsc);
+      document.removeEventListener('keydown',closeOnEsc);
     };
   }, [onClose]);
 
@@ -64,10 +64,10 @@ export default function Modal({onClose, onFormSubmit}) {
       }
     };
 
-    document.addEventListener('click', closeOnClick);
+    document.addEventListener('mousedown', closeOnClick);
 
     return () => {
-      document.removeEventListener('click',closeOnClick);
+      document.removeEventListener('mousedown',closeOnClick);
     };
   }, [onClose]);
 
@@ -78,6 +78,7 @@ export default function Modal({onClose, onFormSubmit}) {
   const handlePlusChange = (evt) => {
     localStorage.setItem(LocalStorageKey.PLUS, evt.target.value);
     setFields(prevState => ({...prevState, plus: evt.target.value}));
+    console.log(plus);
   };
   const handleMinusChange = (evt) => {
     localStorage.setItem(LocalStorageKey.MINUS, evt.target.value);

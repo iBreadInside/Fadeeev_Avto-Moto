@@ -1,13 +1,13 @@
 import React from 'react';
-import {  STARS_IDS } from '../../const';
+import { STARS_IDS } from '../../const';
 import styles from './review-item.module.scss';
 import reviewItemProp from './review-item.prop';
 
 export default function ReviewItem({item}) {
   const {
     name,
-    positive,
-    negative,
+    plus,
+    minus,
     comment,
     rating,
   } = item;
@@ -25,17 +25,17 @@ export default function ReviewItem({item}) {
     <li className={styles.review}>
       <p className={styles.name}>{name}</p>
 
-      {positive &&
+      {plus &&
         <div className={styles.short}>
           <p className={`${styles.title} ${styles.plus}`}>Достоинства</p>
-          <p className={styles.text}>{positive}</p>
+          <p className={styles.text}>{plus}</p>
         </div>
       }
 
-      {negative &&
+      {minus &&
         <div className={styles.short}>
           <p className={`${styles.title} ${styles.minus}`}>Недостатки</p>
-          <p className={styles.text}>{negative}</p>
+          <p className={styles.text}>{minus}</p>
         </div>
       }
 
