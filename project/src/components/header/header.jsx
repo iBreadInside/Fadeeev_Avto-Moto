@@ -13,6 +13,7 @@ export default function Header() {
           className={styles.logo}
           to={AppRoute.MAIN}>
           <img
+            className={styles.img}
             src={logo}
             alt='Логотип Avto-Moto' />
         </Link>

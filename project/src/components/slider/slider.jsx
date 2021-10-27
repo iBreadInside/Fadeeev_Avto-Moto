@@ -59,6 +59,7 @@ const renderPreviews = () => {
           className={styles.preview}
         >
           <img
+            className={styles.img}
             src={standart}
             srcSet={retina}
             alt={`Превью ${id + 1}`}
@@ -96,6 +97,7 @@ export default function Slider() {
                 <span className={styles.new}>new model</span>
 
                 <img
+                  className={styles.img}
                   src={standart}
                   srcSet={`${retina} 2x`}
                   alt='Фото автомобиля Марпех 11'

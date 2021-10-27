@@ -5,6 +5,12 @@
   flex-direction: column;
   justify-content: space-between;
   min-height: 100vh;
+  height:100%;
+  font-family: $font-default;
+  margin: 0;
+  padding: 0;
+  font-size: $font-size--default;
+  line-height: $line-height--default;
 }
 
 @mixin wrapper {
@@ -61,4 +67,9 @@
   color: $red--default;
   background-color: transparent;
   border: 1px solid $red--default;
+}
+
+@mixin img {
+  display: block;
+  width: 100%;
 }

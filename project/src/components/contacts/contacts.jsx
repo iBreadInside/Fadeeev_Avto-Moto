@@ -19,7 +19,7 @@ export default function Contacts() {
         <li className={styles.item}>
           <p className={styles.type}>Телефон</p>
           <a
-            className={styles.info}
+            className={`${styles.info} ${styles.phone}`}
             href='tel:8800333-55-99'
           >
             8 (800) 333-55-99
@@ -28,7 +28,7 @@ export default function Contacts() {
         <li className={styles.item}>
           <p className={styles.type}>E-mail</p>
           <a
-            className={styles.info}
+            className={`${styles.info} ${styles.email}`}
             href='mailto:info@avto-moto.ru'
           >
             info@avto-moto.ru

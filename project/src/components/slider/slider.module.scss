@@ -13,6 +13,10 @@
   max-height: 375px;
 }
 
+.img {
+  @include img;
+}
+
 .new {
   position: absolute;
   display: block;
