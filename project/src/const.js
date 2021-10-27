@@ -60,7 +60,7 @@ export const NavLinks = [
   },
 ];
 
-export const STARS_COUNT = 5;
+export const STARS_IDS = [1, 2, 3, 4, 5];
 
 export const LocalStorageKey = {
   NAME: 'name',

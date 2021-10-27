@@ -5,5 +5,5 @@ export default PropTypes.shape({
   positive: PropTypes.string,
   negative: PropTypes.string,
   comment: PropTypes.string.isRequired,
-  rating: PropTypes.number,
+  rating: PropTypes.string,
 })

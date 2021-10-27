@@ -10,14 +10,14 @@ const REVIEWS = [
     positive: 'Мощность, внешний вид',
     negative: 'Слабые тормозные колодки (пришлось заменить)',
     comment: 'Взяли по трейд-ин, на выгодных условиях у дилера. Стильная внешка и крут по базовым характеристикам. Не думал, что пересяду на китайский автопром, но сейчас гоняю и понимаю, что полностью доволен.',
-    rating: 3,
+    rating: '3',
   },
   {
     name: 'Марсель Исмагилов',
     positive: 'Cтиль, комфорт, управляемость',
     negative: 'Дорогие ремонт и обслуживание',
     comment: 'Дизайн отличный, управление просто шикарно, ощущения за рулём такой машины особые. Но ремонт очень дорогой. Пару месяцев назад пришлось менять двигатель. По стоимости вышло как новый автомобиль. Так что, если покупать эту машину, надо быть готовым к большим расходам на обслуживание.',
-    rating: 3,
+    rating: '3',
   }
 ];
 
@@ -38,8 +38,8 @@ export default function Reviews() {
     setReviewsList(prevState => ([newComment, ...prevState]));
     setIsModalShown(false);
 
-    Object.values(LocalStorageKey).map((key) => (
-      localStorage.removeItem(key)
+    Object.values(LocalStorageKey).map((name) => (
+      localStorage.removeItem(name)
     ));
   };
 
@@ -56,7 +56,7 @@ export default function Reviews() {
 
         <ul className={styles.list}>
           {reviewsList.map((review) => (
-            <ReviewItem item={review} />
+            <ReviewItem item={review} key={review.name} />
           ))}
         </ul>
       </section>

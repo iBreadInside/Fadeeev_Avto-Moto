@@ -1,7 +1,9 @@
 import React, { Fragment, useEffect, useRef, useState } from 'react';
 import PropTypes from 'prop-types';
-import { LocalStorageKey, STARS_COUNT } from '../../const';
+import { LocalStorageKey, STARS_IDS } from '../../const';
 import styles from './modal.module.scss';
+
+const CLOSE_KEYBORD_BTN = 'Escape';
 
 export default function Modal({onClose, onFormSubmit}) {
   const [fields, setFields] = useState({
@@ -44,7 +46,7 @@ export default function Modal({onClose, onFormSubmit}) {
 
   useEffect(() => {
     const closeOnEsc = (evt) => {
-      if (evt.key === 'Escape') {
+      if (evt.key === CLOSE_KEYBORD_BTN) {
         onClose();
       }
     }
@@ -90,24 +92,22 @@ export default function Modal({onClose, onFormSubmit}) {
     setFields(prevState => ({...prevState, comment: evt.target.value}));
   };
 
-  const inputs = [...Array(STARS_COUNT)].map((_, index) => {
-    const id = STARS_COUNT - index;
-
+  const inputs = STARS_IDS.map((ID) => {
     return (
-      <Fragment key={id}>
+      <Fragment key={ID}>
         <input
-          id={`star-${id}`}
+          id={`star-${ID}`}
           className={styles.rating__input}
           type='radio'
           name='rating'
-          value={id}
+          value={ID}
           onChange={handleRatingChange}
-          checked={id.toString() === rating}
+          checked={ID.toString() === rating}
         />
         <label
           className={styles.rating__label}
-          htmlFor={`star-${id}`}
-        >Rating {index}
+          htmlFor={`star-${ID}`}
+        >Rating {ID}
         </label>
       </Fragment>
     );
@@ -201,4 +201,4 @@ export default function Modal({onClose, onFormSubmit}) {
 Modal.propTypes = {
   onClose: PropTypes.func.isRequired,
   onFormSubmit: PropTypes.func.isRequired,
-}
+};

@@ -1,5 +1,5 @@
 import React from 'react';
-import { STARS_COUNT } from '../../const';
+import {  STARS_IDS } from '../../const';
 import styles from './review-item.module.scss';
 import reviewItemProp from './review-item.prop';
 
@@ -12,13 +12,11 @@ export default function ReviewItem({item}) {
     rating,
   } = item;
 
-  const stars = [...Array(STARS_COUNT)].map((_, index) => {
-    const id = index + 1;
-
+  const stars = STARS_IDS.map((ID) => {
     return(
       <li
-        key={id}
-        className={`${id} ${styles.star} ${id.toString() <=  rating ? `${styles.red}` : ''}`}
+        key={ID}
+        className={`${ID} ${styles.star} ${ID.toString() <= rating ? `${styles.red}` : ''}`}
       ></li>
     );
   });
@@ -62,7 +60,6 @@ export default function ReviewItem({item}) {
       </div>
     </li>
   );
-
 }
 
 ReviewItem.propTypes = {
