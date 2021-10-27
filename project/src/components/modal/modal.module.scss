@@ -154,7 +154,8 @@
   padding: 15px 25px;
   border: 1px solid rgba($black--default, .2);
 
-  &:hover {
+  &:hover,
+  &:focus {
     border-color: black;
   }
 }
