@@ -3,9 +3,12 @@
 .review {
   display: flex;
   flex-direction: column;
-  gap: 12px;
   border-bottom: 1px solid $gray--default;
   padding-bottom: 10px;
+
+  &:not(:last-child) {
+    margin-bottom: 20px;
+  }
 }
 
 .name {
@@ -14,9 +17,11 @@
   font-weight: 600;
   color: $black--default;
   margin: 0;
+  margin-bottom: 12px;
 }
 
 .short {
+  margin-bottom: 12px;
   margin-left: 19px;
 }
 
@@ -65,11 +70,12 @@
 }
 
 .full {
-  margin-bottom: 9px;
+  margin-bottom: 21px;
 }
 
 .rating {
   display: flex;
+  margin-bottom: 12px;
 }
 
 .bottom {

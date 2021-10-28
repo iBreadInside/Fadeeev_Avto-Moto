@@ -5,13 +5,12 @@
   display: flex;
   flex-wrap: wrap;
   align-items: center;
-  // min-width: 200px;
   flex: 1 1 50%;
-  justify-content: end;
+  justify-content: flex-end;
 }
 
 .item:not(:last-child) {
-  margin-right: 3vw;
+  margin-right: 2.8vw;
 }
 
 .link {

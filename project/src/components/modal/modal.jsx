@@ -22,6 +22,9 @@ export default function Modal({onClose, onFormSubmit}) {
     comment,
   } = fields;
 
+  const [isName, setIsName] = useState(true);
+  const [isComment, setIsComment] = useState(true);
+
   const modalRef = useRef();
 
   useEffect(() => {
@@ -74,11 +77,11 @@ export default function Modal({onClose, onFormSubmit}) {
   const handleNameChange = (evt) => {
     localStorage.setItem(LocalStorageKey.NAME, evt.target.value);
     setFields(prevState => ({...prevState, name: evt.target.value}));
+    setIsName(true);
   };
   const handlePlusChange = (evt) => {
     localStorage.setItem(LocalStorageKey.PLUS, evt.target.value);
     setFields(prevState => ({...prevState, plus: evt.target.value}));
-    console.log(plus);
   };
   const handleMinusChange = (evt) => {
     localStorage.setItem(LocalStorageKey.MINUS, evt.target.value);
@@ -91,14 +94,32 @@ export default function Modal({onClose, onFormSubmit}) {
   const handleCommentChange = (evt) => {
     localStorage.setItem(LocalStorageKey.COMMENT, evt.target.value);
     setFields(prevState => ({...prevState, comment: evt.target.value}));
+    setIsComment(true);
+  };
+
+  const onSubmit = (evt) => {
+    evt.preventDefault();
+
+    if (name === '') {
+      setIsName(false);
+    }
+
+    if (comment === '') {
+      setIsComment(false);
+    }
+
+    if (name.length > 0 && comment !== '') {
+      onFormSubmit(evt, fields);
+      console.log(name, comment);
+    }
   };
 
   const inputs = STARS_IDS.map((ID) => {
     return (
       <Fragment key={ID}>
         <input
-          id={`star-${ID}`}
           className={styles.rating__input}
+          id={`star-${ID}`}
           type='radio'
           name='rating'
           value={ID}
@@ -106,10 +127,10 @@ export default function Modal({onClose, onFormSubmit}) {
           checked={ID.toString() === rating}
         />
         <label
-          className={styles.rating__label}
+          className={`${styles.rating__label} ${ID <= rating ? styles.rating__red : ''}`}
           htmlFor={`star-${ID}`}
-        >Rating {ID}
-        </label>
+          aria-label={`Оценка ${ID}`}
+        />
       </Fragment>
     );
   });
@@ -131,10 +152,13 @@ export default function Modal({onClose, onFormSubmit}) {
         <form
           className={styles.form}
           id='review-form'
-          onSubmit={(evt) => onFormSubmit(evt, fields)}
+          onSubmit={onSubmit}
         >
           <div className={styles.block}>
             <label htmlFor='name' className={styles.required} >*</label>
+            {!isName &&
+              <p className={styles.error}>Пожалуйста, заполните поле</p>
+            }
             <input
                 className={styles.text}
                 type='text'
@@ -143,7 +167,7 @@ export default function Modal({onClose, onFormSubmit}) {
                 placeholder='Имя'
                 onChange={handleNameChange}
                 value={name}
-                required />
+                autoFocus />
 
             <input
                 className={styles.text}
@@ -176,6 +200,9 @@ export default function Modal({onClose, onFormSubmit}) {
               htmlFor='comment'
               className={`${styles.required} ${styles.required__textarea}`}
             >*</label>
+            {!isComment &&
+              <p className={`${styles.error} ${styles.error__textarea}`}>Пожалуйста, заполните поле</p>
+            }
             <textarea
                 className={styles.textarea}
                 type='text'
@@ -183,8 +210,7 @@ export default function Modal({onClose, onFormSubmit}) {
                 id='review-comment'
                 placeholder='Комментарий'
                 onChange={handleCommentChange}
-                value={comment}
-                required />
+                value={comment} />
           </div>
         </form>
         <button
