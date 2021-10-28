@@ -8,13 +8,17 @@
 
 .bigSlide {
   position: relative;
-  margin-bottom: 1.5vw;
+  margin-bottom: 1.8vw;
   max-width: 600px;
   max-height: 375px;
 }
 
 .img {
   @include img;
+}
+
+.img__inactive {
+  @include visually-hidden;
 }
 
 .new {

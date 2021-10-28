@@ -4,10 +4,14 @@
 .car {
   @include wrapper;
   display: flex;
-  gap: 54px;
   flex-wrap: wrap;
-  margin: 3vw auto 5.5vw;
+  margin: 3.5vw auto 6.5vw;
   width: 100%;
+}
+
+.car>*:not(:last-child) {
+  margin-bottom: 4.3vw;
+  margin-right: 2.7vw;
 }
 
 .content {
@@ -26,7 +30,6 @@
   @include list-style-none;
   display: flex;
   margin-left: 10px;
-  gap: 18px;
 }
 
 .details__item {
@@ -35,6 +38,10 @@
   text-align: end;
   color: rgba($black--default, .5);
   height: 100%;
+
+  &:not(:last-child) {
+    margin-bottom: 18px;
+  }
 
   &:last-child {
     margin-left: 10px;
@@ -78,14 +85,14 @@
   display: flex;
   align-items: center;
   flex-wrap: wrap;
-  gap: 34px;
-  margin: 1.4vw 0;
+  margin: 1vw 0 1.7vw;
 }
 
 .prices__current {
   font-weight: bold;
   font-size: 35px;
   line-height: 48px;
+  margin-right: 34px;
 }
 
 .prices__full {
@@ -107,12 +114,15 @@
 .buttons {
   display: flex;
   flex-direction: column;
-  gap: 16px;
 }
 
 .request,
 .credit {
   @include button;
+}
+
+.request {
+  margin-bottom: 16px;
 }
 
 .credit {

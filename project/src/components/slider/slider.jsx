@@ -86,27 +86,25 @@ export default function Slider() {
 
   return(
     <section className={styles.slider}>
-      {Slides.map(
-        ({id, standart, retina}) => {
-          return(
-            id === currentSlide && (
-              <div
-                key={id}
-                className={styles.bigSlide}
-              >
-                <span className={styles.new}>new model</span>
+      <div
+        className={styles.bigSlide}
+      >
+        <span className={styles.new}>new model</span>
 
-                <img
-                  className={styles.img}
-                  src={standart}
-                  srcSet={`${retina} 2x`}
-                  alt='Фото автомобиля Марпех 11'
-                />
-              </div>
+        {Slides.map(
+          ({id, standart, retina}) => {
+            return(
+              <img
+                key={id}
+                className={`${styles.img} ${id !== currentSlide ? styles.img__inactive : ''}`}
+                src={standart}
+                srcSet={`${retina} 2x`}
+                alt='Фото автомобиля Марпех 11'
+              />
             )
-          );
-        }
-      )}
+          }
+        )}
+      </div>
 
       <div className={styles.control}>
         <SliderCtrl
