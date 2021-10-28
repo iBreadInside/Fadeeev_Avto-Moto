@@ -9,8 +9,17 @@
   justify-content: flex-end;
 }
 
+.list__footer {
+  justify-content: space-between;
+}
+
 .item:not(:last-child) {
   margin-right: 2.8vw;
+}
+
+.list__footer .item {
+  margin-right: 0;
+
 }
 
 .link {

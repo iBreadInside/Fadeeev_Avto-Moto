@@ -12,7 +12,7 @@ export default function Nav({isFooter = false}) {
     : NavLinks.slice(0, HEADER_NAV_LENGTH);
 
   return(
-    <ul className={styles.list}>
+    <ul className={`${styles.list} ${isFooter ? styles.list__footer : ''}`}>
       {
         currentNavLinks.map(
           ({text, route}) => (
