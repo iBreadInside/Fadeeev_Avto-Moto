@@ -119,6 +119,7 @@
 .request,
 .credit {
   @include button;
+  width: fit-content;
 }
 
 .request {
