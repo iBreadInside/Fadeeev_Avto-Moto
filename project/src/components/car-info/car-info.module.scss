@@ -5,12 +5,12 @@
   @include wrapper;
   display: flex;
   flex-wrap: wrap;
-  margin: 3.5vw auto 6.5vw;
+  margin: 3.5vw auto 6.7vw;
   width: 100%;
 }
 
 .car>*:not(:last-child) {
-  margin-bottom: 4.3vw;
+  margin-bottom: 4vw;
   margin-right: 2.7vw;
 }
 
@@ -85,7 +85,7 @@
   display: flex;
   align-items: center;
   flex-wrap: wrap;
-  margin: 1vw 0 1.7vw;
+  margin: 1vw 0 1.8vw;
 }
 
 .prices__current {
