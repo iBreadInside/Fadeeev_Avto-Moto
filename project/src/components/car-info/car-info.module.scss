@@ -5,13 +5,13 @@
   @include wrapper;
   display: flex;
   flex-wrap: wrap;
-  margin: 3.5vw auto 6.7vw;
+  margin: 3.8vw auto 7vw;
   width: 100%;
 }
 
 .car>*:not(:last-child) {
-  margin-bottom: 4vw;
-  margin-right: 2.7vw;
+  margin-bottom: 4.6vw;
+  margin-right: 3vw;
 }
 
 .content {
